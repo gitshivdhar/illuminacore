@@ -414,9 +414,9 @@
      margin-bottom: 50px;
  }
  .footer-links-box{
-    display: flex;
-    justify-content: space-between;
-    gap: 0px;
+    display: grid;
+    grid-template-columns:  2fr 2fr;
+    gap: 50px;
  }
 
  .footer-logo h2 {
