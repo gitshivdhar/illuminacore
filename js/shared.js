@@ -1,6 +1,24 @@
 /* =========================================================================
    SHARED JAVASCRIPT - COMMON ACROSS ALL PAGES
    ========================================================================= */
+//email sending js
+(function(){
+emailjs.init("8y2AjvO-rI5GkXZxX");
+})();
+
+document.getElementById("contactForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+emailjs.send("service_5krhj38","template_rjgihml",{
+name: document.getElementById("name").value,
+email: document.getElementById("email").value,
+organization: document.getElementById("org").value,
+message: document.getElementById("message").value
+}).then(function(response){
+alert("Message sent successfully!");
+});
+});
+
 
 // Header scroll effect
 document.addEventListener('scroll', () => {
@@ -297,3 +315,4 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
