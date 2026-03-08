@@ -344,12 +344,20 @@
                 </div>
             </div>
             <div class="contact-form-container">
-                <form class="contact-form">
-                    <div class="form-group"><input type="text" class="form-control" placeholder="Full Name" required></div>
-                    <div class="form-group"><input type="email" class="form-control" placeholder="Corporate Email" required></div>
-                    <div class="form-group"><input type="text" class="form-control" placeholder="Organization" required></div>
-                    <div class="form-group"><textarea class="form-control" rows="5" placeholder="Tell us about your requirement" required></textarea></div>
-                    <button type="submit" class="btn-accent w-full mt-5">Submit Inquiry</button>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Corporate Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="org" placeholder="Organization" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="message" rows="5" placeholder="Tell us about your requirements!" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-accent w-full mt-5">Send Message</button>
                 </form>
             </div>
         </div>
@@ -426,11 +434,12 @@
                 CIN: U74140DL2023PTC123456</p>
         </div>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="js/shared.js"></script>
     <script src="js/about.js"></script>
 </body>
 
 </html>
+
 
 
