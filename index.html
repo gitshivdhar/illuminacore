@@ -385,15 +385,19 @@
                 </div>
             </div>
             <div class="contact-form-container">
-                <form class="contact-form">
-                    <div class="form-group"><input type="text" class="form-control" placeholder="Full Name" required>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" placeholder="Full Name" required>
                     </div>
-                    <div class="form-group"><input type="email" class="form-control" placeholder="Corporate Email"
-                            required></div>
-                    <div class="form-group"><input type="text" class="form-control" placeholder="Organization" required>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" placeholder="Corporate Email" required>
                     </div>
-                    <div class="form-group"><textarea class="form-control" rows="5" placeholder="How can we help you?"
-                            required></textarea></div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="org" placeholder="Organization" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="message" rows="5" placeholder="How can we help you?" required></textarea>
+                    </div>
                     <button type="submit" class="btn-accent w-full mt-5">Send Message</button>
                 </form>
             </div>
@@ -496,8 +500,10 @@
 
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script src="js/swiper-bundle.min.js"></script>
 <script src="js/shared.js"></script>
 <script src="js/index.js"></script>
+
 
 </html>
