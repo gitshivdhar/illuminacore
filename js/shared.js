@@ -14,11 +14,18 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
         email: document.getElementById("email").value,
         organization: document.getElementById("org").value,
         message: document.getElementById("message").value
-    }).then(function (response) {
-        let name = document.getElementById("name").value;
-
-        alert("Thank you, " + name + ". Your message has been sent successfully. We will get back to you shortly.");
-    });
+    })
+        .then(function (response) {
+            let name = document.getElementById("name").value;
+            alert("Thank you, " + name + ". Your message has been sent successfully.");
+            document.getElementById("contactForm").reset();
+            // refresh page after 2 seconds
+            setTimeout(function () {
+                window.location.href = "index.html";
+            }, 2000);
+        }, function (error) {
+            alert("Failed to send message. Please try again.");
+        });
 });
 
 
@@ -317,5 +324,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
 
 
