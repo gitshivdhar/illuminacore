@@ -190,67 +190,10 @@ document.querySelectorAll('.reveal-on-scroll').forEach(el => {
     observer_reveal.observe(el);
 });
 
-// ========== SWIPER CERTIFICATION CAROUSEL ==========
-document.addEventListener('DOMContentLoaded', () => {
-    const swiper = new Swiper('.certSwiper', {
-        slidesPerView: 1.2,
-        spaceBetween: 16,
-        loop: true,
-        autoplay: {
-            delay: 2500,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-        },
-        breakpoints: {
-            320: {
-                slidesPerView: 1.3,
-                spaceBetween: 12,
-            },
-            480: {
-                slidesPerView: 2,
-                spaceBetween: 16,
-            },
-            640: {
-                slidesPerView: 2.5,
-                spaceBetween: 20,
-            },
-            768: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-            },
-            1024: {
-                slidesPerView: 4.5,
-                spaceBetween: 40,
-            },
-            1440: {
-                slidesPerView: 5.5,
-                spaceBetween: 50,
-            }
-        }
-    });
 
-    // Mobile touch zoom for cert logos
-    const certLogos = document.querySelectorAll('.cert-logo-circle');
-    certLogos.forEach(logo => {
-        logo.addEventListener('touchstart', (e) => {
-            e.stopPropagation();
-            const wasActive = logo.classList.contains('touched');
-            // Remove from all others
-            certLogos.forEach(l => l.classList.remove('touched'));
-            if (!wasActive) {
-                logo.classList.add('touched');
-                if (swiper && swiper.autoplay) swiper.autoplay.stop();
-            } else {
-                if (swiper && swiper.autoplay) swiper.autoplay.start();
-            }
-        }, { passive: true });
-    });
 
-    // Remove zoom when tapping outside
-    document.addEventListener('touchstart', (e) => {
-        if (!e.target.closest('.cert-logo-circle')) {
-            certLogos.forEach(l => l.classList.remove('touched'));
-            if (swiper && swiper.autoplay) swiper.autoplay.start();
-        }
-    }, { passive: true });
-});
+const track = document.querySelector(".cert-track");
+
+if(track){
+    track.innerHTML += track.innerHTML;
+}
