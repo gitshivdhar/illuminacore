@@ -23,6 +23,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const currentHash = window.location.hash || "";
     const solutionPages = ["exam-solutions.html", "payroll-services.html", "manpower-outsourcing.html"];
 
+    const socialLinks = document.querySelectorAll(".social-icon");
+    socialLinks.forEach(link => {
+        if (link.hasAttribute("aria-label")) return;
+        const icon = link.querySelector("i");
+        const classes = icon ? Array.from(icon.classList) : [];
+
+        let label = "Social media link";
+        if (classes.some(cls => cls.includes("linkedin"))) label = "LinkedIn";
+        else if (classes.some(cls => cls.includes("twitter"))) label = "Twitter";
+        else if (classes.some(cls => cls.includes("facebook"))) label = "Facebook";
+
+        link.setAttribute("aria-label", label);
+        link.setAttribute("title", label);
+    });
+
     const solutionsDropdownToggle = document.querySelector(".dropdown .dropdown-toggle");
     if (solutionsDropdownToggle && solutionPages.includes(currentFile)) {
         solutionsDropdownToggle.classList.add("activeLi");

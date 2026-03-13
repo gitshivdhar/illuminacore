@@ -275,7 +275,7 @@
     font-size: 1.4rem;
 }
 
-.fancy-glass-title-row h4 {
+.fancy-glass-title-row h3 {
     color: var(--white);
     font-size: 1.05rem;
     font-weight: 700;
@@ -409,7 +409,7 @@
     font-size: 1.05rem;
 }
 
-.service-lane-card h4 {
+.service-lane-card h3 {
     margin: 0;
     color: var(--white);
     font-size: 0.9rem;
@@ -446,7 +446,7 @@
     font-size: 1.15rem;
 }
 
-.unified-control-section .fancy-glass-title-row h4 {
+.unified-control-section .fancy-glass-title-row h3 {
     font-size: 0.93rem;
 }
 
