@@ -343,6 +343,14 @@
     .floating-3d {
         animation-duration: 7.5s;
     }
+
+    .hero-section,
+    .section-header,
+    .reveal-on-scroll.active,
+    .text-show .hero-title {
+        animation: none !important;
+        filter: none !important;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -354,4 +362,3 @@
         transform: none !important;
     }
 }
-

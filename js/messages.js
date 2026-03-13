@@ -6,12 +6,37 @@ document.addEventListener("DOMContentLoaded", () => {
     const forms = document.querySelectorAll("#contactForm");
     if (!forms.length) return;
 
-    if (!window.emailjs) {
-        console.error("EmailJS is not loaded.");
-        return;
-    }
+    let emailJsReady;
+    const loadEmailJs = () => {
+        if (window.emailjs) return Promise.resolve(window.emailjs);
+        if (emailJsReady) return emailJsReady;
 
-    emailjs.init("8y2AjvO-rI5GkXZxX");
+        emailJsReady = new Promise((resolve, reject) => {
+            const script = document.createElement("script");
+            script.src = "https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js";
+            script.async = true;
+            script.onload = () => {
+                if (!window.emailjs) {
+                    reject(new Error("EmailJS failed to load."));
+                    return;
+                }
+                resolve(window.emailjs);
+            };
+            script.onerror = () => reject(new Error("Failed to load EmailJS script."));
+            document.head.appendChild(script);
+        });
+
+        return emailJsReady;
+    };
+
+    const initEmailJs = async () => {
+        const emailjsLib = await loadEmailJs();
+        if (!initEmailJs.initialized) {
+            emailjsLib.init("8y2AjvO-rI5GkXZxX");
+            initEmailJs.initialized = true;
+        }
+        return emailjsLib;
+    };
 
     forms.forEach((form) => {
         const submitButton = form.querySelector('button[type="submit"]');
@@ -33,7 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             try {
-                await emailjs.send("service_5krhj38", "template_rjgihml", payload);
+                const emailjsLib = await initEmailJs();
+                await emailjsLib.send("service_5krhj38", "template_rjgihml", payload);
                 alert(`Thank you, ${name}. Your message has been sent successfully.`);
                 form.reset();
             } catch (error) {

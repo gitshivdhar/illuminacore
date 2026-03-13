@@ -75,7 +75,6 @@
     padding: 16px;
     display: flex;
     gap: 0;
-    max-height: auto;
 }
 
 @media (max-width: 992px) {

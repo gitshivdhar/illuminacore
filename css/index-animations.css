@@ -187,3 +187,19 @@
     transform: translateY(-8px) scale(1.02);
     background: linear-gradient(135deg, var(--bg-elevated), var(--bg-surface));
 }
+
+@media (max-width: 768px) {
+    .hero-blob-1,
+    .hero-blob-2 {
+        animation: none !important;
+        filter: none !important;
+    }
+
+    .stats-bar,
+    .cert-logo-circle::before,
+    .fancy-glass-item::after,
+    .stat-item::before {
+        animation: none !important;
+        filter: none !important;
+    }
+}

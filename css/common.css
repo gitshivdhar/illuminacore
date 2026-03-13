@@ -549,20 +549,6 @@ img {
     text-decoration: none;
 }
 
-.nav-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s;
-}
-
-.nav-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
 .main-nav .nav-list {
     display: flex;
     gap: 2rem;
@@ -1776,17 +1762,6 @@ img {
     }
 }
 
-.reveal-on-scroll {
-    opacity: 0;
-    transform: translateY(36px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-}
-
-.reveal-on-scroll.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .grid-auto > .card:nth-child(2) {
     transition-delay: 0.1s;
 }
@@ -1822,15 +1797,5 @@ img {
 
     100% {
         background-position: 0% 50%;
-    }
-}
-
-@keyframes zoomEffect {
-    from {
-        transform: scale(1);
-    }
-
-    to {
-        transform: scale(1.08);
     }
 }
