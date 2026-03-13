@@ -1,0 +1,189 @@
+/* =========================================================================
+   INDEX PAGE SPECIFIC ANIMATIONS - PREMIUM
+========================================================================= */
+
+/* HERO BLOBS - Floating Premium Animation */
+.hero-blob-1,
+.hero-blob-2 {
+    animation: blobFloat 8s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+    filter: blur(120px);
+    will-change: transform;
+}
+
+.hero-blob-1 {
+    animation-delay: 0s;
+    background: linear-gradient(135deg, rgba(108, 111, 255, 0.15), rgba(143, 240, 251, 0.05));
+}
+
+.hero-blob-2 {
+    animation-delay: -4s;
+    background: linear-gradient(135deg, rgba(143, 240, 251, 0.12), rgba(108, 111, 255, 0.08));
+}
+
+@keyframes blobFloat {
+
+    0%,
+    100% {
+        opacity: 0.6;
+        transform: translateY(0px) translateX(0px);
+    }
+
+    25% {
+        opacity: 0.8;
+        transform: translateY(-20px) translateX(15px);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: translateY(-30px) translateX(0px);
+    }
+
+    75% {
+        opacity: 0.8;
+        transform: translateY(-15px) translateX(-15px);
+    }
+}
+
+/* STATS BAR PREMIUM ANIMATION */
+.stats-bar {
+    animation: slideUpStagger 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 0 30px rgba(108, 111, 255, 0.15);
+}
+
+@keyframes slideUpStagger {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+        filter: blur(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.stat-item {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    animation: statShine 2s ease infinite;
+}
+
+.stat-item:hover::before {
+    opacity: 1;
+}
+
+@keyframes statShine {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.stat-item:hover {
+    transform: translateY(-8px);
+    filter: drop-shadow(0 15px 30px rgba(108, 111, 255, 0.25));
+}
+
+/* FANCY GLASS ITEMS SHIMMER - ENHANCED */
+.fancy-glass-item {
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border-left: 2px solid rgba(108, 111, 255, 0.2);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.fancy-glass-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.1),
+            transparent);
+    animation: shimmer 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+.fancy-glass-item:hover {
+    border-left-color: rgba(108, 111, 255, 0.5);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateX(4px);
+}
+
+/* CERTIFICATION CAROUSEL ANIMATION - Premium */
+.cert-logo-circle {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+}
+
+.cert-logo-circle::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    background: linear-gradient(45deg, var(--accent), var(--accent2));
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+    animation: certGlow 2s ease infinite;
+}
+
+@keyframes certGlow {
+
+    0%,
+    100% {
+        opacity: 0;
+        filter: blur(5px);
+    }
+
+    50% {
+        opacity: 0.3;
+        filter: blur(10px);
+    }
+}
+
+.swiper-slide:hover .cert-logo-circle {
+    transform: scale(1.15) rotateY(10deg);
+}
+
+.swiper-slide:hover .cert-logo-circle::before {
+    animation: certGlow 2s ease infinite;
+}
+
+/* CARDS INTERACTIVE ANIMATION - Premium */
+.grid-auto>.card {
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.grid-auto>.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    background: linear-gradient(135deg, var(--bg-elevated), var(--bg-surface));
+}

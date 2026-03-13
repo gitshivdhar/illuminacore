@@ -1,0 +1,413 @@
+/* Examination solutions page overrides */
+
+.hero-blob-1,
+.hero-blob-2 {
+    position: absolute;
+    pointer-events: none;
+    z-index: 2;
+    filter: blur(120px);
+    border-radius: 50%;
+}
+
+.hero-blob-1 {
+    top: -10%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba(108, 111, 255, 0.12);
+}
+
+.hero-blob-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(143, 240, 251, 0.08);
+}
+
+.card {
+    padding: 25px 15px;
+}
+
+.card i.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.service-detail-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+.service-detail-card {
+    display: grid;
+    grid-template-columns: minmax(260px, 360px) 1fr;
+    gap: 28px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-detail-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent));
+    background-size: 200% 100%;
+    animation: cardLineShimmer 3s ease infinite;
+    transform: scaleX(0);
+    transition: transform 0.35s ease, height 0.35s ease, box-shadow 0.35s ease;
+    transform-origin: left;
+}
+
+.service-detail-card:hover::before {
+    transform: scaleX(1);
+    height: 3px;
+    box-shadow: 0 0 12px rgba(108, 111, 255, 0.5), 0 0 24px rgba(143, 240, 251, 0.2);
+}
+
+.service-detail-card:hover {
+    border-color: var(--border-accent);
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.35);
+}
+
+.service-detail-card:hover .img-hover-zoom {
+    transform: scale(1.08);
+}
+
+.service-detail-media {
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg-secondary);
+}
+
+.service-detail-media img {
+    width: 100%;
+    min-height: 240px;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.service-detail-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 18px 0 0;
+    display: grid;
+    gap: 10px;
+}
+
+.service-detail-list li {
+    color: var(--text-secondary);
+    line-height: 1.65;
+    position: relative;
+    padding-left: 18px;
+}
+
+.service-detail-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+}
+
+.icon-large {
+    font-size: 2.9rem;
+}
+
+.immersive-split {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 60%) minmax(240px, 40%);
+    gap: 0;
+    align-items: stretch;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: linear-gradient(135deg, rgba(10, 14, 27, 0.96), rgba(15, 20, 38, 0.92));
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.3);
+}
+
+.immersive-split-left {
+    grid-template-columns: minmax(240px, 40%) minmax(0, 60%);
+}
+
+.immersive-copy {
+    position: relative;
+    z-index: 2;
+    padding: clamp(16px, 1.8vw, 24px);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent),
+        linear-gradient(135deg, rgba(12, 15, 29, 0.96), rgba(12, 15, 29, 0.9));
+}
+
+.immersive-media {
+    position: relative;
+    min-height: 240px;
+    margin: 0;
+    border-radius: 0;
+    border: 0;
+    background-position: center;
+    background-image: var(--panel-image);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    isolation: isolate;
+    background-color: transparent;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.immersive-media-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 1;
+    transition: transform 0.45s ease;
+}
+
+.immersive-media:hover .immersive-media-image {
+    transform: scale(1.05);
+}
+
+.immersive-split-right .immersive-media {
+    background-position: right center;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+}
+
+.immersive-split-left .immersive-media {
+    background-position: left center;
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+}
+
+.immersive-split-right .immersive-media-image {
+    object-position: right center;
+}
+
+.immersive-split-left .immersive-media-image {
+    object-position: left center;
+}
+
+.immersive-media::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--panel-image);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(22px) saturate(0.95);
+    opacity: 0.72;
+    transform: scale(1.12);
+    z-index: 0;
+}
+
+.immersive-media::after {
+    content: none;
+}
+
+.immersive-split-right .immersive-media-scrim,
+.immersive-split-left .immersive-media-scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+.immersive-split-right .immersive-media-scrim {
+    background: transparent;
+}
+
+.immersive-split-left .immersive-media-scrim {
+    background: transparent;
+}
+
+.immersive-badge {
+    position: absolute;
+    left: -14px;
+    bottom: 16px;
+    z-index: 3;
+    padding: 12px 14px;
+}
+
+.immersive-split-left .immersive-badge {
+    left: auto;
+    right: -18px;
+}
+
+.immersive-copy .process-step-pill {
+    margin-bottom: 8px;
+    padding: 5px 12px;
+    font-size: 0.72rem;
+}
+
+.immersive-copy h2 {
+    margin-bottom: 8px;
+    line-height: 1.15;
+    font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+}
+
+.immersive-copy h2 .text-accent {
+    font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+}
+
+.immersive-copy > p {
+    font-size: 0.86rem;
+    margin-bottom: 10px !important;
+    max-width: 48ch;
+    line-height: 1.45;
+}
+
+.immersive-copy .d-flex.flex-column.gap-6 {
+    gap: 4px !important;
+}
+
+.immersive-copy .group {
+    padding: 4px 0;
+}
+
+.immersive-copy .group h4 {
+    font-size: 0.88rem;
+    margin-bottom: 2px;
+}
+
+.immersive-copy .group p {
+    font-size: 0.76rem;
+    line-height: 1.35;
+}
+
+.immersive-copy .group > div:first-child {
+    width: 34px;
+    height: 34px;
+    font-size: 0.8rem;
+}
+
+.immersive-copy .grid-2-col {
+    gap: 8px !important;
+}
+
+.immersive-copy .glass-card {
+    padding: 10px 12px;
+}
+
+.immersive-copy .glass-card h4 {
+    font-size: 0.82rem;
+}
+
+.immersive-copy .glass-card p {
+    font-size: 0.72rem;
+    line-height: 1.3;
+}
+
+.immersive-copy .glass-card i {
+    margin-bottom: 8px !important;
+    font-size: 1.2rem !important;
+}
+
+@media (max-width: 992px) {
+    .immersive-split,
+    .immersive-split-left {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 12px;
+        border-radius: 22px;
+    }
+
+    .immersive-media {
+        min-height: 0;
+        height: auto;
+        order: -1;
+        margin: 0;
+        border-radius: 18px;
+    }
+
+    .immersive-media-image {
+        position: relative;
+        inset: auto;
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 18px;
+    }
+
+    .immersive-media::before {
+        inset: 8px;
+        border-radius: 18px;
+    }
+
+    .immersive-copy {
+        padding: 10px 12px 14px;
+    }
+
+    .immersive-split-left .immersive-media-scrim,
+    .immersive-split-right .immersive-media-scrim {
+        background: transparent;
+    }
+
+    .immersive-badge {
+        left: 12px;
+        right: auto;
+        bottom: 12px;
+    }
+
+    .service-detail-card {
+        grid-template-columns: 1fr;
+    }
+
+    .service-detail-media img {
+        min-height: 220px;
+    }
+
+    .order-reverse-mobile {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-blob-1,
+    .hero-blob-2 {
+        display: none;
+    }
+
+    .immersive-split {
+        border-radius: 18px;
+    }
+
+    .immersive-media {
+        min-height: 0;
+        margin: 0;
+        border-radius: 16px;
+    }
+
+    .immersive-media-image {
+        border-radius: 16px;
+    }
+
+    .service-detail-card {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .service-detail-media img {
+        min-height: 190px;
+    }
+}

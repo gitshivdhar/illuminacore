@@ -1,0 +1,64 @@
+﻿/* Manpower outsourcing page overrides */
+
+.manpower-hero {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    margin-top: 0px;
+    min-height: calc(100vh - 34px);
+    padding-top: 34px;
+    box-sizing: border-box;
+}
+
+.manpower-hero::after {
+    background:
+        linear-gradient(180deg, rgba(7, 13, 30, 0.56) 0%, rgba(6, 12, 28, 0.76) 38%, rgba(6, 8, 15, 0.96) 100%),
+        linear-gradient(135deg, rgba(108, 111, 255, 0.2), rgba(143, 240, 251, 0.1));
+}
+
+.hero-blob-1,
+.hero-blob-2 {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(120px);
+    border-radius: 50%;
+}
+
+.hero-blob-1 {
+    top: -10%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba(108, 111, 255, 0.12);
+}
+
+.hero-blob-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(143, 240, 251, 0.08);
+}
+
+.manpower-hero .hero-title {
+    margin-bottom: 12px;
+}
+
+.manpower-hero .hero-subtitle {
+    margin-bottom: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .manpower-hero {
+        margin-top: 28px;
+        min-height: calc(100vh - 28px);
+        padding-top: 28px;
+    }
+
+    .hero-blob-1,
+    .hero-blob-2 {
+        display: none;
+    }
+}
