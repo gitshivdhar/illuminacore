@@ -488,6 +488,7 @@ img {
 }
 
 @media (max-width: 992px) {
+
     .grid-2-col,
     .lg-grid-2 {
         grid-template-columns: 1fr;
@@ -526,6 +527,12 @@ img {
     align-items: center;
     padding: 0 5%;
     transition: border-color 0.3s;
+
+    img {
+        height: 65px;
+        width: auto;
+        display: block;
+    }
 }
 
 .site-header.scrolled {
@@ -539,14 +546,23 @@ img {
 }
 
 .logo {
-    font-size: clamp(1rem, 3vw, 1.2rem);
-    font-weight: 900;
-    letter-spacing: 2px;
-    background: linear-gradient(135deg, #fff 0%, var(--accent2) 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
+    flex-shrink: 0;
+}
+
+.logo img {
+    display: block;
+    width: auto;
+    height: 60px;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .logo img {
+        height: 56px;
+    }
 }
 
 .main-nav .nav-list {
@@ -678,7 +694,7 @@ img {
         display: block;
     }
 
-    .site-header > .btn-outline {
+    .site-header>.btn-outline {
         display: none;
     }
 
@@ -924,7 +940,7 @@ img {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(10, 25, 47, 0.45);
+    background: rgba(10, 25, 47, 0.36);
     z-index: 1;
 }
 
@@ -950,7 +966,7 @@ img {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(6, 8, 15, 0.6) 0%, rgba(6, 8, 15, 0.9) 100%);
+    background: linear-gradient(180deg, rgba(6, 8, 15, 0.3) 0%, rgba(6, 8, 15, 0.78) 100%);
 }
 
 .hero-content {
@@ -1268,7 +1284,7 @@ img {
     position: absolute;
     top: 0px;
     left: 6px;
-    right:10px;
+    right: 10px;
     height: 2px;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
@@ -1308,6 +1324,7 @@ img {
         opacity: 1;
         transform: none;
     }
+
     to {
         opacity: 0;
         transform: none;
@@ -1319,6 +1336,7 @@ img {
         opacity: 0;
         transform: none;
     }
+
     to {
         opacity: 1;
         transform: none;
@@ -1762,15 +1780,15 @@ img {
     }
 }
 
-.grid-auto > .card:nth-child(2) {
+.grid-auto>.card:nth-child(2) {
     transition-delay: 0.1s;
 }
 
-.grid-auto > .card:nth-child(3) {
+.grid-auto>.card:nth-child(3) {
     transition-delay: 0.2s;
 }
 
-.grid-auto > .card:nth-child(4) {
+.grid-auto>.card:nth-child(4) {
     transition-delay: 0.3s;
 }
 

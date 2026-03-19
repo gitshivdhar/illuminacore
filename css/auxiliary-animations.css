@@ -1,0 +1,51 @@
+/* =========================================================================
+   AUXILIARY SERVICES PAGE ANIMATIONS
+========================================================================= */
+
+.auxiliary-hero {
+    animation: heroFadeIn 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.auxiliary-hero .hero-bg {
+    transition: opacity 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.auxiliary-hero .hero-bg.zoom {
+    animation: auxiliaryHeroZoom 11s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.auxiliary-hero .hero-animate {
+    opacity: 0;
+    transform: translateY(46px);
+    transition: opacity 1.15s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 1.15s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.auxiliary-hero.text-show .hero-animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.auxiliary-hero.text-show .hero-title {
+    transition-delay: 0.18s;
+    animation: titleGlowIn 1.35s ease-out both 0.2s;
+}
+
+.auxiliary-hero.text-show .hero-subtitle {
+    transition-delay: 0.58s;
+}
+
+.auxiliary-hero.text-show .hero-btns {
+    transition-delay: 0.92s;
+}
+
+@keyframes auxiliaryHeroZoom {
+    from {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+    to {
+        transform: scale(1.12);
+        filter: brightness(0.92);
+    }
+}

@@ -41,9 +41,9 @@
     gap: clamp(20px, 4vw, 32px);
 }
 
-.logo {
+/* .logo {
     letter-spacing: 1px;
-}
+} */
 
 .main-nav .nav-list {
     gap: 1.5rem;

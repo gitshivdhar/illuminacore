@@ -1,0 +1,105 @@
+/* Auxiliary services page overrides */
+
+.auxiliary-hero {
+    min-height: calc(100vh - 34px);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    padding-top: 34px;
+    box-sizing: border-box;
+}
+
+.auxiliary-hero::after {
+    background:
+        linear-gradient(180deg, rgba(7, 13, 30, 0.46) 0%, rgba(6, 12, 28, 0.68) 40%, rgba(6, 8, 15, 0.94) 100%),
+        linear-gradient(135deg, rgba(108, 111, 255, 0.18), rgba(143, 240, 251, 0.08));
+}
+
+.hero-blob-1,
+.hero-blob-2 {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(120px);
+    border-radius: 50%;
+}
+
+.hero-blob-1 {
+    top: -10%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba(108, 111, 255, 0.12);
+}
+
+.hero-blob-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(143, 240, 251, 0.08);
+}
+
+.auxiliary-hero .hero-title {
+    margin-bottom: -10px;
+}
+
+.auxiliary-hero .hero-subtitle {
+    max-width: 900px;
+    margin: 0 auto 1.25rem;
+}
+
+@media (max-width: 768px) {
+    .auxiliary-hero {
+        min-height: calc(100vh - 28px);
+        padding-top: 28px;
+    }
+
+    .hero-blob-1,
+    .hero-blob-2 {
+        display: none;
+    }
+}
+
+.py-section {
+    padding: clamp(20px, 12vw, 140px) 0;
+}
+
+/* Auxiliary stats layout */
+.auxiliary-services-stats .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    align-items: stretch;
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+.auxiliary-services-stats .stat-item {
+    min-width: 0;
+    padding: 0 14px;
+}
+
+.auxiliary-services-stats .stat-item h2,
+.auxiliary-services-stats .stat-item span {
+    font-size: clamp(1.75rem, 3vw, 2.45rem);
+}
+
+.auxiliary-services-stats .stat-label {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    letter-spacing: 0.08em;
+    max-width: 15ch;
+    margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+    .auxiliary-services-stats .stats-bar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 12px;
+    }
+
+    .auxiliary-services-stats .stat-item::after {
+        display: none;
+    }
+}

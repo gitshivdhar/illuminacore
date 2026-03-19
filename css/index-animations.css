@@ -2,6 +2,94 @@
    INDEX PAGE SPECIFIC ANIMATIONS - PREMIUM
 ========================================================================= */
 
+.hero-section .hero-animate {
+    opacity: 0;
+    transform: none;
+    transition: opacity 0.8s ease;
+}
+
+.hero-section .text-show .hero-animate,
+.hero-section.text-show .hero-animate,
+.hero-content.text-show .hero-animate {
+    opacity: 1;
+    transform: none;
+}
+
+.hero-section .text-show .hero-title,
+.hero-section.text-show .hero-title,
+.hero-content.text-show .hero-title {
+    animation: none;
+}
+
+.hero-section .hero-bg {
+    opacity: 1;
+    visibility: hidden;
+    transition: clip-path 1.65s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 8.8s cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0s linear 1.65s;
+    will-change: transform, clip-path;
+}
+
+.hero-section .hero-bg[data-direction="from-bottom"] {
+    transform: translate3d(0, 12%, 0) scale(1.02);
+    clip-path: inset(100% 0 0 0);
+}
+
+.hero-section .hero-bg[data-direction="from-right"] {
+    transform: translate3d(12%, 0, 0) scale(1.02);
+    clip-path: inset(0 0 0 100%);
+}
+
+.hero-section .hero-bg[data-direction="from-left"] {
+    transform: translate3d(-12%, 0, 0) scale(1.02);
+    clip-path: inset(0 100% 0 0);
+}
+
+.hero-section .hero-bg[data-direction="from-top"] {
+    transform: translate3d(0, -12%, 0) scale(1.02);
+    clip-path: inset(0 0 100% 0);
+}
+
+.hero-section .hero-bg.is-active,
+.hero-section .hero-bg.is-leaving {
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+.hero-section .hero-bg.is-active {
+    transform: translate3d(0, 0, 0) scale(1.04);
+    clip-path: inset(0 0 0 0);
+    z-index: 1;
+}
+
+.hero-section .hero-bg.is-active.is-zoomed {
+    transform: translate3d(0, 0, 0) scale(1.16);
+}
+
+.hero-section .hero-bg.is-leaving {
+    z-index: 0;
+}
+
+.hero-section .hero-bg.is-leaving[data-direction="from-bottom"] {
+    transform: translate3d(0, -8%, 0) scale(1.04);
+    clip-path: inset(0 0 100% 0);
+}
+
+.hero-section .hero-bg.is-leaving[data-direction="from-right"] {
+    transform: translate3d(-8%, 0, 0) scale(1.04);
+    clip-path: inset(0 100% 0 0);
+}
+
+.hero-section .hero-bg.is-leaving[data-direction="from-left"] {
+    transform: translate3d(8%, 0, 0) scale(1.04);
+    clip-path: inset(0 0 0 100%);
+}
+
+.hero-section .hero-bg.is-leaving[data-direction="from-top"] {
+    transform: translate3d(0, 8%, 0) scale(1.04);
+    clip-path: inset(100% 0 0 0);
+}
+
 /* HERO BLOBS - Floating Premium Animation */
 .hero-blob-1,
 .hero-blob-2 {
@@ -189,6 +277,12 @@
 }
 
 @media (max-width: 768px) {
+    .hero-section .hero-bg {
+        transition: clip-path 1.15s cubic-bezier(0.22, 1, 0.36, 1),
+            transform 7.2s cubic-bezier(0.22, 1, 0.36, 1),
+            visibility 0s linear 1.15s;
+    }
+
     .hero-blob-1,
     .hero-blob-2 {
         animation: none !important;

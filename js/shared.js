@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const nav = document.querySelector("nav.main-nav");
     const currentFile = (window.location.pathname.split("/").pop() || "index.html").toLowerCase();
     const currentHash = window.location.hash || "";
-    const solutionPages = ["exam-solutions.html", "payroll-services.html", "manpower-outsourcing.html"];
+    const solutionPages = ["exam-solutions.html", "payroll-services.html", "manpower-outsourcing.html", "auxiliary-services.html"];
 
     const socialLinks = document.querySelectorAll(".social-icon");
     socialLinks.forEach(link => {
