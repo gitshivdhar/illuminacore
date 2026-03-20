@@ -1,0 +1,334 @@
+/* AMC services page overrides */
+
+.amc-hero {
+    min-height: calc(100vh - 34px);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    padding-top: 34px;
+    box-sizing: border-box;
+}
+
+.amc-hero::after {
+    background:
+        linear-gradient(180deg, rgba(7, 13, 30, 0.46) 0%, rgba(6, 12, 28, 0.68) 40%, rgba(6, 8, 15, 0.94) 100%),
+        linear-gradient(135deg, rgba(108, 111, 255, 0.18), rgba(143, 240, 251, 0.08));
+}
+
+.hero-blob-1,
+.hero-blob-2 {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(120px);
+    border-radius: 50%;
+}
+
+.hero-blob-1 {
+    top: -10%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba(108, 111, 255, 0.12);
+}
+
+.hero-blob-2 {
+    bottom: -10%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(143, 240, 251, 0.08);
+}
+
+.amc-hero .hero-title {
+    margin-bottom: -10px;
+}
+
+.amc-hero .hero-subtitle {
+    max-width: 900px;
+    margin: 0 auto 1.25rem;
+}
+
+.py-section {
+    padding: clamp(20px, 12vw, 140px) 0;
+}
+
+.immersive-split {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 60%) minmax(240px, 40%);
+    gap: 0;
+    align-items: stretch;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: linear-gradient(135deg, rgba(10, 14, 27, 0.96), rgba(15, 20, 38, 0.92));
+    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.3);
+}
+
+.immersive-split-left {
+    grid-template-columns: minmax(240px, 40%) minmax(0, 60%);
+}
+
+.immersive-copy {
+    position: relative;
+    z-index: 2;
+    padding: clamp(16px, 1.8vw, 24px);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent),
+        linear-gradient(135deg, rgba(12, 15, 29, 0.96), rgba(12, 15, 29, 0.9));
+}
+
+.immersive-media {
+    position: relative;
+    min-height: 240px;
+    margin: 0;
+    border-radius: 0;
+    border: 0;
+    background-position: center;
+    background-image: var(--panel-image);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    isolation: isolate;
+    background-color: transparent;
+    box-shadow: none;
+    overflow: hidden;
+}
+
+.immersive-media-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 1;
+    transition: transform 0.45s ease;
+}
+
+.immersive-media:hover .immersive-media-image {
+    transform: scale(1.05);
+}
+
+.immersive-split-right .immersive-media {
+    background-position: right center;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+}
+
+.immersive-split-left .immersive-media {
+    background-position: left center;
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+}
+
+.immersive-split-right .immersive-media-image {
+    object-position: right center;
+}
+
+.immersive-split-left .immersive-media-image {
+    object-position: left center;
+}
+
+.immersive-media::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--panel-image);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(22px) saturate(0.95);
+    opacity: 0.72;
+    transform: scale(1.12);
+    z-index: 0;
+}
+
+.immersive-split-right .immersive-media-scrim,
+.immersive-split-left .immersive-media-scrim {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: transparent;
+}
+
+.immersive-badge {
+    position: absolute;
+    left: -14px;
+    bottom: 16px;
+    z-index: 3;
+    padding: 12px 14px;
+}
+
+.immersive-copy .process-step-pill {
+    margin-bottom: 8px;
+    padding: 5px 12px;
+    font-size: 0.72rem;
+}
+
+.immersive-copy h2 {
+    margin-bottom: 8px;
+    line-height: 1.15;
+    font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+}
+
+.immersive-copy h2 .text-accent {
+    font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+}
+
+.immersive-copy > p {
+    font-size: 0.86rem;
+    margin-bottom: 10px !important;
+    max-width: 48ch;
+    line-height: 1.45;
+}
+
+.immersive-copy .d-flex.flex-column.gap-6 {
+    gap: 4px !important;
+}
+
+.immersive-copy .group {
+    padding: 4px 0;
+}
+
+.immersive-copy .group h4 {
+    font-size: 0.88rem;
+    margin-bottom: 2px;
+}
+
+.immersive-copy .group p {
+    font-size: 0.76rem;
+    line-height: 1.35;
+}
+
+.immersive-copy .group > div:first-child {
+    width: 34px;
+    height: 34px;
+    font-size: 0.8rem;
+}
+
+.immersive-copy .grid-2-col {
+    gap: 8px !important;
+}
+
+.immersive-copy .glass-card {
+    padding: 10px 12px;
+}
+
+.immersive-copy .glass-card h4 {
+    font-size: 0.82rem;
+}
+
+.immersive-copy .glass-card p {
+    font-size: 0.72rem;
+    line-height: 1.3;
+}
+
+.immersive-copy .glass-card i {
+    margin-bottom: 8px !important;
+    font-size: 1.2rem !important;
+}
+
+.amc-services-stats .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    align-items: stretch;
+    width: min(1200px, 100%);
+    margin: 0 auto;
+}
+
+.amc-services-stats .stat-item {
+    min-width: 0;
+    padding: 0 14px;
+}
+
+.amc-services-stats .stat-item h2,
+.amc-services-stats .stat-item span {
+    font-size: clamp(1.75rem, 3vw, 2.45rem);
+}
+
+.amc-services-stats .stat-label {
+    font-size: 0.78rem;
+    line-height: 1.45;
+    letter-spacing: 0.08em;
+    max-width: 15ch;
+    margin: 0 auto;
+}
+
+@media (max-width: 992px) {
+    .immersive-split,
+    .immersive-split-left {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 12px;
+        border-radius: 22px;
+    }
+
+    .immersive-media {
+        min-height: 0;
+        height: auto;
+        order: -1;
+        margin: 0;
+        border-radius: 18px;
+    }
+
+    .immersive-media-image {
+        position: relative;
+        inset: auto;
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 18px;
+    }
+
+    .immersive-media::before {
+        inset: 8px;
+        border-radius: 18px;
+    }
+
+    .immersive-copy {
+        padding: 10px 12px 14px;
+    }
+
+    .immersive-badge {
+        left: 12px;
+        right: auto;
+        bottom: 12px;
+    }
+
+    .amc-services-stats .stats-bar {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 12px;
+    }
+
+    .amc-services-stats .stat-item::after {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .amc-hero {
+        min-height: calc(100vh - 28px);
+        padding-top: 28px;
+    }
+
+    .hero-blob-1,
+    .hero-blob-2 {
+        display: none;
+    }
+
+    .immersive-split {
+        border-radius: 18px;
+    }
+
+    .immersive-media {
+        min-height: 0;
+        margin: 0;
+        border-radius: 16px;
+    }
+
+    .immersive-media-image {
+        border-radius: 16px;
+    }
+}

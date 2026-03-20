@@ -1,0 +1,39 @@
+/* AMC hero entrance */
+
+.amc-hero .hero-bg {
+    opacity: 0;
+    transform: scale(1.08);
+    transition: opacity 1s ease, transform 11s ease;
+}
+
+.amc-hero .hero-bg.active {
+    opacity: 1;
+}
+
+.amc-hero .hero-bg.zoom {
+    transform: scale(1);
+}
+
+.amc-hero .hero-animate {
+    opacity: 0;
+    transform: translateY(46px);
+    transition: opacity 0.85s ease, transform 0.85s ease;
+}
+
+.amc-hero.text-show .hero-title {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.18s;
+}
+
+.amc-hero.text-show .hero-subtitle {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.52s;
+}
+
+.amc-hero.text-show .hero-btns {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.86s;
+}
