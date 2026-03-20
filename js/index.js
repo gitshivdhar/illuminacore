@@ -46,7 +46,7 @@ const slides = [
         image: "images/omr-process.webp",
         title: "Fast <span class=\"text-accent\">OMR</span> Evaluation and Result Processing",
         desc: "Handle high-volume answer sheet scanning, validation, and result compilation with industrial-speed precision.",
-        href: "exam-solutions.html#features"
+        href: "exam-solutions.html#omr-process"
     },
     {
         label: "IT and ITeS AMC",

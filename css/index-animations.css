@@ -68,26 +68,23 @@
 
 .hero-section .hero-bg.is-leaving {
     z-index: 0;
+    clip-path: inset(0 0 0 0);
 }
 
 .hero-section .hero-bg.is-leaving[data-direction="from-bottom"] {
-    transform: translate3d(0, -8%, 0) scale(1.04);
-    clip-path: inset(0 0 100% 0);
+    transform: translate3d(0, 0, 0) scale(1.11);
 }
 
 .hero-section .hero-bg.is-leaving[data-direction="from-right"] {
-    transform: translate3d(-8%, 0, 0) scale(1.04);
-    clip-path: inset(0 100% 0 0);
+    transform: translate3d(0, 0, 0) scale(1.11);
 }
 
 .hero-section .hero-bg.is-leaving[data-direction="from-left"] {
-    transform: translate3d(8%, 0, 0) scale(1.04);
-    clip-path: inset(0 0 0 100%);
+    transform: translate3d(0, 0, 0) scale(1.11);
 }
 
 .hero-section .hero-bg.is-leaving[data-direction="from-top"] {
-    transform: translate3d(0, 8%, 0) scale(1.04);
-    clip-path: inset(100% 0 0 0);
+    transform: translate3d(0, 0, 0) scale(1.11);
 }
 
 /* HERO BLOBS - Floating Premium Animation */
